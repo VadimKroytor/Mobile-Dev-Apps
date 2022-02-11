@@ -2,9 +2,9 @@
 
 The following Mobile Applications were tested, debugged, and implemented using the integrated development environment: Android Studio.
 
-### Mortgage Adviser App
+##### Mortgage Adviser App
 
-### Mortgage Calculator App
+##### Mortgage Calculator App
 
 BMI App
 
