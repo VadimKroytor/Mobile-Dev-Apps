@@ -3,7 +3,7 @@
 The following Mobile Applications were tested, debugged, and implemented using the integrated development environment: Android Studio.
 
 ##### Mortgage Advisor App
-The UI requests the user to input the principle, amortization, aand interest of their mortgage. The app outputs an analysis which consists of showing monthly payments required as well as the balance still owing if the user chooses to terminate their mortgage on the nth anniversary (where n is a number the user can input). This app allows a mortgage holder user to determine the best time to terminate their mortgage if they are thinking of doing so. 
+The UI requests the user to input the principle, amortization, and interest of their mortgage. The app outputs an analysis which consists of showing monthly payments required as well as the balance still owing if the user chooses to terminate their mortgage on the nth anniversary (where n is a number the user can input). This app allows a mortgage holder user to determine the best time to terminate their mortgage if they are thinking of doing so. 
 
 ##### Mortgage Calculator App
 The UI requests the user to input the principle, amortization, aand interest of their mortgage. The app outputs the monthly payments required (in dollars) for the provided mortgage rates. 
