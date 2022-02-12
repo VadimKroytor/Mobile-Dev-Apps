@@ -1,6 +1,9 @@
-package com.example.vadim.caps;
+package com.example.quiz_minigame_app;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,9 +16,9 @@ import java.util.TreeMap;
 
 import ca.roumani.i2c.CountryDB;
 
-public class CapsActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private Game game;
+    private GameModel game;
     private String question;
     private Map<String, String> map = new TreeMap<String,String>();
     private String answer;
@@ -24,8 +27,9 @@ public class CapsActivity extends AppCompatActivity {
     List<String> capitals = db.getCapitals();
     int capitalsSize = capitals.size();
     private String s = "";
-    private int score;
+    private int score = 0;
     private int qNum = 1;
+
     private  String inputtedAnswer;
     private String[] model;
     private String correctAnswer;
@@ -34,25 +38,25 @@ public class CapsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.caps_layout);
-        game = new Game();
+        game = new GameModel();
         model = game.qa();
-        String questionAndAnswer = model[0] + "split" + model[1] + "split" + model[2];
-        String[] split = questionAndAnswer.split("split");
-        correctAnswer = split[1];
-        randomAnswer = split[2];
+        question = model[0];
+        correctAnswer = model[1];
+        randomAnswer = model[2];
         ask();
     }
 
     private void ask(){
-        if (this.qNum !=10 ) {
+        if (this.qNum !=5 ) {
             ((EditText) findViewById(R.id.answer)).setText("");
 
-            ((TextView) findViewById(R.id.question)).setText(this.model[0]);
+            ((TextView) findViewById(R.id.question)).setText(question);
             this.correctAnswer = this.model[1];
             ((TextView) findViewById(R.id.qNum)).setText("Q# " + this.qNum);
         }
         this.qNum += 1;
         model = game.qa();
+        question = model[0];
 
 
     }
@@ -63,7 +67,7 @@ public class CapsActivity extends AppCompatActivity {
     public void onDone(View v)
     {
         this.inputtedAnswer = ((EditText)findViewById(R.id.answer)).getText().toString();
-        s = s + ((TextView)findViewById(R.id.question)).getText().toString()+"\n"+
+        s = s + (qNum - 1) + ") " + ((TextView)findViewById(R.id.question)).getText().toString()+"\n"+
                 "Your Answer: "+ inputtedAnswer.toUpperCase()+"\n"+"Correct Answer: " + this.correctAnswer+ "\n" + "\n";
         s = s + "\n\n";
         try {
@@ -75,23 +79,23 @@ public class CapsActivity extends AppCompatActivity {
             }
 
 
-            if (this.qNum == 10) {
-                ((TextView) findViewById(R.id.qNum)).setText("Q#" + qNum);
-                ((TextView) findViewById(R.id.score)).setText("Score= " + score);
-                ((TextView) findViewById(R.id.question)).setText("FINAL SCORE: " + score);
-                s = "GAME OVER! App will Close if \"DONE\" button is pressed!";
+            if (this.qNum == 5) {
+                //((TextView) findViewById(R.id.qNum)).setText("Q#" + qNum);
+                ((TextView) findViewById(R.id.score)).setText("SCORE = " + score);
+                ((TextView) findViewById(R.id.question)).setText("GAME OVER! App will Close if \"DONE\" button is pressed!");
 
-            } else if (this.qNum == 11) {
+            } else if (this.qNum == 6) {
                 finish();
             } else if (this.inputtedAnswer.equalsIgnoreCase(this.correctAnswer)) {
                 this.score = this.score + 1;
-                ((TextView) findViewById(R.id.score)).setText("Score= " + this.score);
+                ((TextView) findViewById(R.id.score)).setText("SCORE = " + this.score);
 
 
-                ((TextView) findViewById(R.id.qNum)).setText("Q# " + qNum);
+                //((TextView) findViewById(R.id.qNum)).setText("Q# " + qNum);
 
             } else {
                 ((TextView) findViewById(R.id.qNum)).setText("Q# " + qNum);
+                ((TextView) findViewById(R.id.score)).setText("SCORE = " + this.score);
             }
             ((TextView) findViewById(R.id.log)).setText(s);
             ask();

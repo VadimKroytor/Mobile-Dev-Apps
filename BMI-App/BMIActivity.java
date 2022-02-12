@@ -28,38 +28,3 @@ public class BMIActivity extends AppCompatActivity {
     }
 }
 
-
-/* RandomColorsModel.java file
-package com.example.vadim.randomcolours;
-
-import android.graphics.Color;
-
-public class RandomColorsModel {
-    private int redTint;
-    private int greenTint;
-    private int blueTint;
-
-    public RandomColorsModel(int r, int g, int b)
-    {
-        this.blueTint = r;
-        this.greenTint = g;
-        this.blueTint = b;
-    }
-
-    public int randomColorGenerator()
-    {
-        this.redTint = (int) (256*Math.random());
-        this.blueTint = (int) (256*Math.random());
-        this.greenTint = (int) (256*Math.random());
-
-        int rgbValue = Color.rgb(redTint, blueTint, greenTint);
-        return rgbValue;
-    }
-
-    public static void main(String[] args)
-    {
-        RandomColorsModel colorChanger = new RandomColorsModel(int value);
-
-    }
-}
- */

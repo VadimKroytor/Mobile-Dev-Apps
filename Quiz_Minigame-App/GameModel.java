@@ -1,14 +1,16 @@
-package com.example.vadim.caps;
-
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+package com.example.quiz_minigame_app;
 
 
-import ca.roumani.i2c.Country;
-import ca.roumani.i2c.CountryDB;
 
-public class Game {
+        import java.util.List;
+        import java.util.Map;
+        import java.util.TreeMap;
+
+
+        import ca.roumani.i2c.Country;
+        import ca.roumani.i2c.CountryDB;
+
+public class GameModel {
 
     private CountryDB db;
     private String question;
@@ -18,7 +20,7 @@ public class Game {
 
 
 
-    public Game(){
+    public GameModel(){
 
         this.db = new CountryDB();
 
@@ -66,7 +68,7 @@ public class Game {
         return qandA;
     }
     public static void main(String[] args) {
-        Game wow = new Game();
+        GameModel wow = new GameModel();
         String[] biscuits = wow.qa();
         System.out.println(biscuits[0] + " " + biscuits[1]);
         int index = 0;
