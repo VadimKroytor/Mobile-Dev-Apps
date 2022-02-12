@@ -1,4 +1,4 @@
-package com.example.vadim.bmi;
+package com.example.bmi;
 
 
 import ca.roumani.i2c.Utility;
@@ -52,7 +52,7 @@ public class BMIModel {
 
         myModel = new BMIModel("59", "1.83");
         System.out.println("Your weight is " + myModel.toPound() + " lb, your height is " +
-        myModel.toFeetInch() + ", and your BMI is " + myModel.getBMI());
+                myModel.toFeetInch() + ", and your BMI is " + myModel.getBMI());
 
 
 
