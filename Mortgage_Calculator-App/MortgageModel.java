@@ -1,4 +1,4 @@
-package com.example.vadim.mcalc;
+package com.example.mortgage_calculator;
 
 public class MortgageModel {
     private double principle;
@@ -36,6 +36,6 @@ public class MortgageModel {
         String computeOutstanding = mortgageCalc.outstandingAfter("60");
         System.out.println(computeMortgage + " & outstanding of " + computeOutstanding);
 
-        }
     }
+}
 
