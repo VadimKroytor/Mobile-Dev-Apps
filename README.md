@@ -2,7 +2,7 @@
 
 The following Mobile Applications were tested, debugged, and implemented using the integrated development environment: Android Studio.
 
-##### Mortgage Adviser App
+##### Mortgage Advisor App
 The UI requests the user to input the principle, amortization, aand interest of their mortgage. The app outputs an analysis 
 
 ##### Mortgage Calculator App
