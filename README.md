@@ -24,6 +24,6 @@ This app allows for a user input-generated string/notes to be encrypted and like
 
 -> Please note that API 14: Android 4.0 was used to implement these apps. As such, the build configurations of certain apps will need to be modified to older versions. This would include adding older dependencies to the build.gradle file in specific apps. 
 
--> The concepts and design of these applications were a part of my YorkU Computer Science cirriculum which focused on mobile development. 
+-> The concepts and design of these applications were a part of my YorkU Computer Science curriculum which focused on mobile development. 
 
 
